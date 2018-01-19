@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "./build",
+        "sourceMap": true,
+        "target": "es5"
+    },
+    "files": [
+        
+    ],
+    "include": [
+
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

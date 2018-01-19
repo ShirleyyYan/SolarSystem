@@ -1,0 +1,15 @@
+{
+    "sphere" : {
+        "name" : "名字",
+        "radius" : "半径km",
+        "axisrotation" : "自转轴",
+        "axisrevolution" : "公转轴",
+        "periodrotation" : "自转周期d",
+        "periodvolution" : "公转周期",
+        "radiusvolution" : "公转半径",
+        "startrotation" : "初始自转角",
+        "startvolution" : "初始公转角",
+        "diffuse" : "贴图",
+        "bump" : "凹凸"
+    }
+}

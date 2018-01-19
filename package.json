@@ -1,0 +1,26 @@
+{
+  "name": "solarsystem",
+  "version": "1.0.0",
+  "description": "a 3d scene showing the solar system on canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node/start.js",
+    "generatetexture": "node "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShirleyyYan/SolarSystem.git"
+  },
+  "author": "Shirley Yan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShirleyyYan/SolarSystem/issues"
+  },
+  "homepage": "https://github.com/ShirleyyYan/SolarSystem#readme",
+  "dependencies": {
+    "babylonjs": "^3.1.0-beta1.1.1",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4"
+  }
+}
