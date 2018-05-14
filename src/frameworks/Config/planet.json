@@ -1,1 +1,97 @@
-[]
+[
+  {
+    "name": "sun",
+    "chinese": "太阳",
+    "radiuskm": "696000",
+    "radiusvolution": "0",
+    "radius": "16",
+    "periodrotation": "0",
+    "periodvolution": "0",
+    "map": "assets/texture/sunmap.jpg"
+  },
+  {
+    "name": "mercury",
+    "chinese": "水星",
+    "radiuskm": "2440",
+    "radiusvolution": "10",
+    "radius": "0.975",
+    "periodrotation": "58.65",
+    "periodvolution": "87.7",
+    "map": "assets/texture/mercurymap.jpg",
+    "bump": "assets/texture/mercurybump.jpg"
+  },
+  {
+    "name": "venus",
+    "chinese": "金星",
+    "radiuskm": "6052",
+    "radiusvolution": "14",
+    "radius": "1.3",
+    "periodrotation": "-243.01",
+    "periodvolution": "224.7",
+    "map": "assets/texture/venusmap.jpg",
+    "bump": "assets/texture/venusbump.jpg"
+  },
+  {
+    "name": "earth",
+    "chinese": "地球",
+    "radiuskm": "6378",
+    "radiusvolution": "18",
+    "radius": "1.5",
+    "periodrotation": "0.9973",
+    "periodvolution": "365.24",
+    "map": "assets/texture/earthmap.jpg",
+    "bump": "assets/texture/earthbump.jpg"
+  },
+  {
+    "name": "mars",
+    "chinese": "火星",
+    "radiuskm": "3397",
+    "radiusvolution": "25",
+    "radius": "1.2",
+    "periodrotation": "1.026",
+    "periodvolution": "686.98",
+    "map": "assets/texture/marsmap.jpg",
+    "bump": "assets/texture/marsbump.jpg",
+    "normal": "assets/texture/marsnormal.jpg"
+  },
+  {
+    "name": "jupiter",
+    "chinese": "木星",
+    "radiuskm": "71492",
+    "radiusvolution": "35",
+    "radius": "4.5",
+    "periodrotation": "0.41",
+    "periodvolution": "4332.71",
+    "map": "assets/texture/jupitermap.jpg"
+  },
+  {
+    "name": "saturn",
+    "chinese": "土星",
+    "radiuskm": "60268",
+    "radiusvolution": "50",
+    "radius": "3.8",
+    "periodrotation": "0.426",
+    "periodvolution": "10759.5",
+    "map": "assets/texture/saturnmap.jpg"
+  },
+  {
+    "name": "uranus",
+    "chinese": "天王星",
+    "radiuskm": "25559",
+    "radiusvolution": "70",
+    "radius": "3.5",
+    "periodrotation": "0.626",
+    "periodvolution": "30685",
+    "map": "assets/texture/uranusmap.jpg"
+  },
+  {
+    "name": "neptune",
+    "chinese": "海王星",
+    "radiuskm": "24764",
+    "radiusvolution": "100",
+    "radius": "3",
+    "periodrotation": "0.658",
+    "periodvolution": "60190",
+    "map": "assets/texture/neptunemap.jpg"
+  }
+]

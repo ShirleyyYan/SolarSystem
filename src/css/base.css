@@ -4,12 +4,10 @@
     block-size: none;
 }
 
-body {
-    display: block;
-    width: 100%;
+html, body, canvas {
     height: 100%;
-}
-
-#stage {
+    width: 100%;
     display: block;
+    touch-action: none;
+
 }

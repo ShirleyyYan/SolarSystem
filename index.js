@@ -1,7 +1,12 @@
+import css from './src/css/base.css';
+import BABYLON from './src/libs/babylonjs/babylon.max';
+import BabylonScene from './src/frameworks/Base/base';
 window.onload = function() {
-    window.canvas = document.getElementById('stage');
     /* globals */
-    window.baseurl = '/';
+    global.BABYLON = BABYLON;
+    window.canvas = document.createElement('canvas');
+    document.body.appendChild(window.canvas);
+
     /* instance */
-    window.bScene = new BabylonScene(canvas);
+    let scene = window.bScene = new BabylonScene(canvas);
 }

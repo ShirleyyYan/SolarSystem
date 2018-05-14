@@ -1,35 +1,93 @@
+import Solar from './../Components/Solar';
+
+
 class BabylonScene {
     constructor(canvas) {
-        this.renderingcanvas = canvas; 
-        this.engine = new BABYLON.Engine(this.renderingcanvas, true);
+        let _self = this;
 
-        this.scene = new BABYLON.Scene(this.engine);
-        let scene = this.scene;
+        _self.renderingCanvas = canvas;
+        _self.engine = new BABYLON.Engine(canvas, true);
 
-        this.camera = new BABYLON.ArcRotateCamera("camera1", 0, 0, 5, new BABYLON.Vector3(0, 0, -0), this.scene);
-        this.camera.attachControl(this.renderingcanvas);
-        this.camera.lowerRadiusLimit = 3;
+        let scene = new BABYLON.Scene(_self.engine);
+        _self.scene = scene;
+        _self.scene.clearColor = BABYLON.Color3.Black();
+        // let scene = this.scene;
+
+        let actionManager = new BABYLON.ActionManager(scene);
+        scene.actionManager = actionManager;
+        actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnEveryFrameTrigger, this.beforeRender.bind(this)));
+
+        _self.camera = new BABYLON.ArcRotateCamera("camera1", 0, 0, 5, new BABYLON.Vector3(0, 0, 0), _self.scene);
+        // _self.camera.attachControl(canvas, true);
+        _self.camera.radius = 600;
+        // _self.camera.lowerRadiusLimit = 3;
+        _self.camera.alpha = 0.36;
+        _self.camera.beta = 1.305;
 
 
-        this.scene.clearColor = new BABYLON.Color3(0, 0, 0);
+        // let light1 = new BABYLON.HemisphericLight('lightup', BABYLON.Vector3.Up(), scene)
+        // light1.intensity = 0.5;
+        // light1.specular.set(0, 0, 0);
+        // let light2 = new BABYLON.HemisphericLight('lightdown', new BABYLON.Vector3(0, -1, 0), scene)
+        // light2.intensity = 0.5;
+        // light2.specular.set(0, 0, 0);
 
-        let light = new BABYLON.PointLight('centerlight', BABYLON.Vector3.Zero(), scene)
+        let pointLight = new BABYLON.PointLight('point', new BABYLON.Vector3(0, 0, 0), scene);
+        pointLight.intensity = 1.5;
+        pointLight.specular.set(0, 0, 0);
 
-        light.intensity = 0.7;
+        this.solar = new Solar(_self);
 
-        let sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter:2}, scene);
-        sphere.material = new BABYLON.StandardMaterial('sm', this.scene);
-        sphere.material.diffuseColor = new BABYLON.Color3(1, 1, 1);
-        
+        // BABYLON.MeshBuilder.CreateLines(
+        //     'sdfas',
+        //     {
+        //         points: [
+        //             new BABYLON.Vector3(0, 0, 0),
+        //             new BABYLON.Vector3(0, 50, 0),
+        //             new BABYLON.Vector3(0, 0, 50),
+        //             new BABYLON.Vector3(50, 0, 0),
+        //         ], 
+        //         colors: [
+        //             new BABYLON.Color4(1, 0, 0, 1),
+        //             new BABYLON.Color4(1, 1, 0, 1),
+        //             new BABYLON.Color4(0, 1, 0, 1),
+        //             new BABYLON.Color4(0, 1, 1, 1)
+        //         ]
+        //     },
+        //     scene
+        // );
 
-        this.engine.runRenderLoop(this.render.bind(this));
+        // let points = [
+        //     BABYLON.Vector3.Zero(),
+        //     BABYLON.Vector3.Up().scale(500)
+        // ];
+        // let color = new BABYLON.Color4();
+        // BABYLON.MeshBuilder.CreateLines('sdlfsdfas', {
+        //     points: points,
+        //     colors: [
+        //         color, color
+        //     ]
+        // }, scene);
+
+        // scene.debugLayer.show();
+
+        _self.engine.runRenderLoop(_self.render.bind(_self));
+
     }
 
     render() {
-        this.engine.beginFrame();
+        let _self = this;
+        _self.engine.beginFrame();
+
+        _self.solar.update();
         
-        this.scene.render();
-        this.engine.endFrame();
+        _self.scene.render();
+        _self.engine.endFrame();
+    }
+
+    beforeRender(e) {
+        let _self = this;
     }
 
 }
+export default BabylonScene;
